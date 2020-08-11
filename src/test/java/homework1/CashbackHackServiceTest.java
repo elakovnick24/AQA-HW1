@@ -8,14 +8,14 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class CashbackHackServiceTest {
 
     @Test
-    void remain() {
-        CashbackHackService cb = new CashbackHackService();
-        assertEquals(999, cb.remain(1001));
+    void positiveCase () {
+        CashbackHackService cashback = new CashbackHackService();
+        assertEquals(999, cashback.remain(1001));
     }
 
     @Test
-    void test2() {
-        CashbackHackService cb2 = new CashbackHackService();
-        assertNotEquals(1000, cb2.remain(1000));
+    void negativeCase () {
+        CashbackHackService noCashBack = new CashbackHackService();
+        assertNotEquals(1000, noCashBack.remain(1000));
     }
 }
