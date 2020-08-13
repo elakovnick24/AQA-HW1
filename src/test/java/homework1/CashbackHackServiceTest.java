@@ -2,8 +2,7 @@ package homework1;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class CashbackHackServiceTest {
 
@@ -18,4 +17,11 @@ class CashbackHackServiceTest {
         CashbackHackService noCashBack = new CashbackHackService();
         assertNotEquals(1000, noCashBack.remain(1000));
     }
+
+    @Test
+    void subZero () {
+        CashbackHackService zero = new CashbackHackService();
+        assertThrows(IllegalArgumentException.class, ()-> { zero.remain(0);});
+    }
 }
+
